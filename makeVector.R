@@ -4,6 +4,7 @@ makeVector <- function(x = numeric()) {
         evn <- environment()
         print(parent.env(evn))
         set <- function(y) {
+                print("calling set")
                 x <<- y
                 m <<- NULL
         }

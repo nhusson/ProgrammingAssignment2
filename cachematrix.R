@@ -10,11 +10,14 @@ makeCacheMatrix <- function(x = matrix()) {
         # i.e. no value is cached
         inv <- NULL
         
-        # this is the set function that we use to assign the matrix to be
+        # this is the set function that we use to assign a matrix to be
         #inverted
         # we also reset the cache since the value may be different
-        #(note: ideally we could check if the x matrix actually changed and 
+        #(note 1: ideally we could check if the x matrix actually changed and 
         #only reset if it did, but we'll keep it simple)
+        #(note 2: this doesnt need to be called when creating the cacheMatrix
+        #, only call this function if the matrix needs to be changed after the 
+        # cache object has been created)
         set <- function(y) {
                 x <<- y
                 inv <<- NULL
@@ -25,8 +28,6 @@ makeCacheMatrix <- function(x = matrix()) {
         
         #this function will allow us to set the inverse matrix value to the
         #"cached" value
-        #note that we need to use << symbol to make sure the inv variable is
-        #just a local version
         setinverse <- function(inverse) inv <<- inverse
         
         #this function will allows us to get the value of the inverse matrix
