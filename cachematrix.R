@@ -48,10 +48,10 @@ makeCacheMatrix <- function(x = matrix()) {
 ## this function will return the inverse of object 'x'...
 ## note that x is not a "pure" matrix object, it's actually a list object
 ## that will contain a few helper functions that we can use to set or access
-## the matrix to be inverted and retrive or set the cached value of the
+## the matrix to be inverted and retrieve or set the cached value of the
 ## inverse operation.
 ## Basically if the cached value is present, it will be returned directly
-## otherwise the value is computed, then saved in the "cache" and then returned
+## otherwise the value is computed, saved in the "cache" and then returned
 cacheSolve <- function(x, ...) {
         
         #let's get the inverse matrix from the cache
